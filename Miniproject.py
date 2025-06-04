@@ -53,36 +53,9 @@ with st.sidebar:
         </style>
     ''',unsafe_allow_html=True)
     st.title(":anchor: About the dataset")
-    st.markdown("Urban populations continue to rise, the expansion of supermarkets in densely populated cities has become increasingly competitive. With a growing demand for health and wellness products, understanding market dynamics is crucial. In this dashboard we'll give it a try and turn everything into a readable visualizations.")
+    st.markdown("In the highly competitive market for health and well-being, it is crucial to understand how the consumer makes their purchases in a bid to optimize business performance. With a growing demand for health and wellness products, understanding market dynamics is crucial. In this dashboard we'll give it a try and turn everything into a readable visualizations.")
 
-# The Selectbox
-    #Category = Supplement_Sales['Category'].unique()
-    #line = st.selectbox('',['Choose the Category'] + list(Category))
-    #if line == 'Choose the Category':
-        #chosen_line = Supplement_Sales
-    #else:
-        #chosen_line = Supplement_Sales[Supplement_Sales['Category'] == line]
 
-    # Customizing the select box
-    #st.markdown(f'''
-    #<style>
-        #.stSelectbox div div {{
-                #background-color: #fafafa;
-               # color: #333;
-        #}}
-        #.stSelectbox div div:hover {{
-                #cursor: pointer
-        #}}
-        #.stSelectbox div div .option {{
-                #background-color: red;
-               # color: #111;
-        #}}
-       # .stSelectbox div div svg {{
-               # fill: black;
-       # }}
-    #</style>
-    #''', unsafe_allow_html=True)
-    
 
 # side bar for filters
 st.sidebar.title('Filters')
@@ -230,76 +203,4 @@ with col11:
         grouped_df = filtered_df.groupby(by=["Product Name"], as_index=False)["Units Returned"].sum()
         st.write(grouped_df.style.background_gradient(cmap="Reds"))
 
-
-#Create dashboard section
-#with chartRow:
-    # Filter for the month
-    #Supplement_Sales['Date'] = pd.to_datetime(Supplement_Sales['Date'])
-    #mar_data = (Supplement_Sales['Date'].dt.month == 3)
-    #lineQuantity = chosen_line[(mar_data)]
-
-    # Quantity for each day
-    #Units_Sold_per_year = lineQuantity.groupby('Date')['Units Sold'].sum().reset_index()
-
-    # some space
-    #st.markdown('<div></div>', unsafe_allow_html=True)
-
-    # Create a line chart for Quantity over the last month using Plotly
-    #fig_Units_Sold = px.line(
-        #Units_Sold_per_year, 
-        #x='Date', 
-       # y='Units Sold', 
-        #title='Unit Sold over the Year'
-    #)
-    #fig_Units_Sold.update_layout(
-        #margin_r=100,
-    #)
-    #st.plotly_chart(fig_Units_Sold)
-
-
-
-    
-# creating a single-element container.
-#placeholder = st.empty()
-#dataframe filter 
-
-
-
-
-       
-        
-
-#upload data
-#upload_file = st.file_uploader("Please upload here:", type = 'csv')
-
-
-#df = pd.read_csv(r"C:\Users\welcome\Desktop\BSMS1306\streamlit\Tips.csv")
-#df = pd.read_csv("Supplement_Sales.csv")
-#df = pd.read_csv(upload_file)
-
-#show data nk tunjuk pun boleh x nk pun boleh
-#st.subheader("Raw Data")
-#st.write(df)
-
-#histogram
-#st.subheader("Histogram")
-#column = st.selectbox("Choose a column",df.columns)
-#fig, ax = plt.subplots(figsize = (10,6))
-#df[column].plot(kind = 'hist', ax =ax)
-#st.pyplot(fig)
-#yg kaler purple
-#fig = px.histogram(df, x=column)
-#fig.update_traces( marker = {"color":"purple", "line":{"color":"black","width":2}})
-#st.plotly_chart(fig)
-
-#Scatter chart
-#st.subheader("Scatter Chart")
-#x_column = st.selectbox("Choose x-axis column",df.columns)
-#y_column = st.selectbox("Choose y-axis column",df.columns)
-#fig, ax = plt.subplots(figsize = (10,6))
-#df.plot(kind = 'scatter', x=x_column, y=y_column, ax =ax)
-#st.pyplot(fig)
-
-#fig = px.scatter(df, x=x_column, y = y_column,color ='sex' , color_discrete_sequence= ['yellow', 'red'])
-#st.plotly_chart(fig)
 
