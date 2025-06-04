@@ -21,9 +21,6 @@ st.image('Header.jpg')
 #st.date_input("Select a date")
 st.title("""Supplement Sales Dashboard""")
 
-#Data view
-#st.subheader("Detailed Data view")
-#st.write(df)
 
 # the layout Variables
 hero = st.container()
