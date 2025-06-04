@@ -191,13 +191,13 @@ with col9:
 # Create columns for specific Data view
 col10, col11 = st.columns(2)
 
-#Product Data View
+#Units Sold Data View
 with col10:
     with st.expander("Total Units Sold Data View"):
         grouped_df = filtered_df.groupby(by=["Product Name"], as_index=False)["Units Sold"].sum()
         st.write(grouped_df.style.background_gradient(cmap="Greens"))
 
-#Location Data View
+#Units Returned Data View
 with col11:
     with st.expander("Total Units Returned Data View"):
         grouped_df = filtered_df.groupby(by=["Product Name"], as_index=False)["Units Returned"].sum()
